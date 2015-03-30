@@ -1,0 +1,27 @@
+#ifndef DOM_TREE_H_
+#define DOM_TREE_H_
+
+#include "Node.h"
+#include "Element.h"
+#include <iostream>
+#include <string>
+
+class DOM_Tree
+{
+	private:
+		Node *document;
+	public:
+		DOM_Tree();
+		DOM_Tree(const DOM_Tree& Dom);
+		DOM_Tree(Element newe, std::list L<DOM_Tree> &Dom);
+		DOM_Tree childNode(int p);
+		void appendChild(DOM_Tree &Dom, int p);
+		void removeChild(int p);
+		void replaceChild(DOM_Tree &Dom, int p);
+		DOM_Tree getElementByID(string ID);
+		DOM_Tree operator=(DOM_Tree& Dom);
+		friend std::ostream& operator<<(std::ostream& salida, const DOM_Tree &Dom);
+		~DOM_Tree();
+};
+
+#endif
